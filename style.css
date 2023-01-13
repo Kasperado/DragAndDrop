@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.row-container {
+  background-color: black;
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.row {
+  font-weight: 700;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(4, 62, 4);
+  cursor: grabbing;
+}
+
+.dragged {
+  filter: brightness(0.5);
+}
