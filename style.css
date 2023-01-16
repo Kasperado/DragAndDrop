@@ -4,21 +4,32 @@
   margin: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .row-container {
-  background-color: black;
-  color: white;
+  flex: 1 1 0;
   margin: 1rem;
-  padding: 1rem;
+  background-color: rgb(204, 204, 204);
+  box-shadow: 0 0 4px black;
+  border-radius: 4px;
 }
 
 .row {
-  font-weight: 700;
   margin: 1rem;
   padding: 1rem;
-  background-color: rgb(4, 62, 4);
+  font-weight: 700;
+  color: white;
+  background-color: orange;
   cursor: grabbing;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgb(161, 161, 161);
 }
 
 .dragged {
-  filter: brightness(0.5);
+  filter: opacity(0.5);
 }

@@ -22,7 +22,22 @@ allContainers.forEach((container) => {
 
   container.addEventListener("dragover", (event) => {
     event.preventDefault();
-    container.appendChild(draggedItem);
+    // Calculate where to put dragged row
+    let mousePosY = event.y;
+    let putBefore = null;
+    let bestY = Number.MAX_VALUE;
+    [...container.children].forEach((row) => {
+      if (row.classList.contains("dragged")) return;
+      let rowRect = row.getBoundingClientRect();
+      let rowPositionY = rowRect.y + rowRect.height / 2;
+      if (rowPositionY > mousePosY && bestY > rowPositionY) {
+        putBefore = row;
+        bestY = rowPositionY;
+      }
+    });
+    // Put it
+    if (putBefore) container.insertBefore(draggedItem, putBefore);
+    else container.appendChild(draggedItem);
   });
   
 });
